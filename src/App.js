@@ -18,6 +18,7 @@ function App() {
       title: `Novo repositório ${Date.now()}`,
       url: 'http://repository.com/repo',
       techs: ['Node.js', 'ReactJS', 'React Native'],
+      likes: 0,
     });
 
     const repository = response.data;
@@ -28,15 +29,7 @@ function App() {
   async function handleRemoveRepository(id) {
     await api.delete(`/repositories/${id}`);
 
-    const repositoryIndex = repositories.findIndex(
-      repository => repository.id === id
-    );
-
-    const updatedRepositories = [...repositories];
-
-    updatedRepositories.splice(repositoryIndex, 1);
-
-    setRepositories(updatedRepositories);
+    setRepositories(repositories.filter(repository => repository.id !== id));
   }
 
   return (
