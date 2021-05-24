@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "config:base",
+    "group:all",
+    // Regular updates
+    "schedule:monthly"
+  ],
+  // Random assignee of PR
+  "assigneesFromCodeOwners": true,
+  "assigneesSampleSize": 1,
+  "separateMinorPatch": true,
+  "packageRules": [
+    {
+      // Only major and minor updates
+      "updateTypes": ["patch"],
+      "enabled": false
+    }
+  ],
+  // Encrypted NPM token for private packages
+  "encrypted": {
+    "npmToken": "w/0FYXCXO1aYkUeivEFbB7yG/CPM4xC2ksGVLLua0rNMYyEF8bxlrYqMtJqriuG53oecATlrSzgh06/U3sYkA2ZNgHabyoinZWc+fI0rchCCgSH0EXIeRifZH+nRNY69e5EleMOT0wNrkYlSuWN0U0uOU53ZZB+bojKPEpWhULZTOC6nXsN5WOrYdP0T1Tw=="
+  }
+}
